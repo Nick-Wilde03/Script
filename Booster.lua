@@ -4,13 +4,13 @@ _G.Settings = {
         ["Ignore Others"] = true-- Ignore other Characters
     },
     Meshes = {
-        Destroy = false, -- Destroy Meshes
+        Destroy = true, -- Destroy Meshes
         LowDetail = true -- Low detail meshes (NOT SURE IT DOES ANYTHING)
     },
     Images = {
         Invisible = true, -- Invisible Images
-        LowDetail = false, -- Low detail images (NOT SURE IT DOES ANYTHING)
-        Destroy = false, -- Destroy Images
+        LowDetail = true, -- Low detail images (NOT SURE IT DOES ANYTHING)
+        Destroy = true, -- Destroy Images
     },
     ["No Particles"] = true, -- Disables all ParticleEmitter, Trail, Smoke, Fire and Sparkles
     ["No Camera Effects"] = true, -- Disables all PostEffect's (Camera/Lighting Effects)
