@@ -1,30 +1,24 @@
-getgenv().fpsthingenabled = true
-getgenv().fpsthing = {}
-getgenv().fpsthing.maxfpswhen = 65
-getgenv().fpsthing.minfpswhen = 22
-setfpscap(fpsthing.maxfpswhen)
-local uis = game:GetService("UserInputService")
-local con1,con2 = nil,nil
-local ru=game:GetService("RunService")
-con1 = uis.WindowFocused:Connect(function()
-if getgenv().fpsthingenabled == true then
-ru:Set3dRenderingEnabled(true)
-   setfpscap(getgenv().fpsthing.maxfpswhen)
---[[else
-con1:Disconnect()
-con2:Disconnect()
-con1,con2=nil,nil--]]
-end
-end)
-task.wait(2.5)
-con2 = uis.WindowFocusReleased:Connect(function()
-if getgenv().fpsthingenabled == true then
-   setfpscap(getgenv().fpsthing.minfpswhen)
-ru:Set3dRenderingEnabled(false)
---[[else
-con1:Disconnect()
-con2:Disconnect()
-con1,con2=nil,nil--]]
-end
-end)
-uis = nil
+_G.Settings = {
+    Players = {
+        ["Ignore Me"] = true, -- Ignore your Character
+        ["Ignore Others"] = true-- Ignore other Characters
+    },
+    Meshes = {
+        Destroy = false, -- Destroy Meshes
+        LowDetail = true -- Low detail meshes (NOT SURE IT DOES ANYTHING)
+    },
+    Images = {
+        Invisible = true, -- Invisible Images
+        LowDetail = false, -- Low detail images (NOT SURE IT DOES ANYTHING)
+        Destroy = false, -- Destroy Images
+    },
+    ["No Particles"] = true, -- Disables all ParticleEmitter, Trail, Smoke, Fire and Sparkles
+    ["No Camera Effects"] = true, -- Disables all PostEffect's (Camera/Lighting Effects)
+    ["No Explosions"] = true, -- Makes Explosion's invisible
+    ["No Clothes"] = true, -- Removes Clothing from the game
+    ["Low Water Graphics"] = true, -- Removes Water Quality
+    ["No Shadows"] = true, -- Remove Shadows
+    ["Low Rendering"] = true, -- Lower Rendering
+    ["Low Quality Parts"] = true -- Lower quality parts
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua"))()
